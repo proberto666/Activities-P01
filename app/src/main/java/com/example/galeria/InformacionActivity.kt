@@ -29,7 +29,7 @@ class InformacionActivity : AppCompatActivity() {
         printInfo()
 
         imgViewer.setOnClickListener{
-            startActivity(Intent(this, InformacionActivity::class.java).apply {
+            startActivity(Intent(this, ImagenActivity::class.java).apply {
                 putExtra("Imagen", detalles)
             })
         }
