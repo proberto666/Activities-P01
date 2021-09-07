@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Galeria">
         <activity
+            android:name=".ImagenActivity"
+            android:exported="true" />
+        <activity
+            android:name=".InformacionActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

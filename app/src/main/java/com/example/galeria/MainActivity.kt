@@ -1,5 +1,6 @@
 package com.example.galeria
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -41,7 +42,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnInformacion.setOnClickListener {
-
+            startActivity(Intent(this, InformacionActivity::class.java).apply {
+                putExtra("detalleImagen", detalles[i])
+            })
         }
     }
 
