@@ -21,6 +21,9 @@ class InformacionActivity : AppCompatActivity() {
     private lateinit var detalles: Detalles
 
     private fun setView(){
+
+
+
         detalles = intent.getParcelableExtra("detalleImagen")?:Detalles()
         imgViewer=findViewById(R.id.imgView)
         txvTitulo=findViewById(R.id.txvTitulo)
