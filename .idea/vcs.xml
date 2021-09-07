@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/Activities-P01" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Examen_2p" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/desarrollo macOS/App WebKit" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/desarrollo macOS/AppBlobAzure.iOS" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/desarrollo macOS/AppMapKit" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/desarrollo macOS/Bindings" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/desarrollo macOS/DatePicker" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/desarrollo macOS/Examen2p" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/desarrollo macOS/ExamenFinal" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/desarrollo macOS/PopupButton" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/desarrollo macOS/appStoryCodigo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/desarrollo macOS/cocoapods" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/empresarial/app1/escuela-app1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/empresarial/react-pruebas-unitarias" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/empresarial/registro-covax" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/empresarial/todo-list" vcs="Git" />
+  </component>
+</project>

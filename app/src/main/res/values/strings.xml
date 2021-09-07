@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Galeria</string>
+    <string name="btn_siguiente">➡️</string>
+    <string name="btn_anterior">⬅️</string>
+    <string name="btn_info">Información</string>
+
+
+</resources>
