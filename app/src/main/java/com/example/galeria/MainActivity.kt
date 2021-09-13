@@ -1,70 +1,63 @@
 package com.example.galeria
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.addAdapter
+import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
 
+    private val PREF = "MY_PREFERENCES"
+    private val USR_FAV = "USR_FAVS"
+    private lateinit var preferences: SharedPreferences
     private lateinit var detalles: Array<Detalles>
+    private val moshi = Moshi.Builder().build()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        detalles=Detalles.listaImagenes
-        initView()
+        preferences = getSharedPreferences(PREF, Context.MODE_PRIVATE)
+        detalles=getFavPreferences()
+        supportFragmentManager.beginTransaction().add(R.id.container, GaleriaFragment().apply {
+            arguments = Bundle().apply {
+                putParcelableArray("lista", detalles)
+            }
+        }).commit()
     }
 
-    private lateinit var btnSiguiente:Button
-    private lateinit var btnAnterior:Button
-    private lateinit var btnInformacion:Button
-    private lateinit var imgViewer:ImageView
-
-    private fun initView(){
-        var i = 0;
-        btnAnterior = findViewById(R.id.btnAnterior)
-        btnSiguiente = findViewById(R.id.btnSiguiente)
-        btnInformacion=findViewById(R.id.btnInfo)
-        imgViewer = findViewById(R.id.imgView)
-
-        imgViewer.setImageResource(detalles[i].src!!.imagen)
-
-        btnAnterior.setOnClickListener {
-            i=ImagenAnterior(i)
-            imgViewer.setImageResource(detalles[i].src!!.imagen)
-        }
-
-        btnSiguiente.setOnClickListener {
-            i=ImagenSiguiente(i)
-            imgViewer.setImageResource(detalles[i].src!!.imagen)
-        }
-
-        btnInformacion.setOnClickListener {
-            startActivity(Intent(this, InformacionActivity::class.java).apply {
-                putExtra("detalleImagen", detalles[i])
-            })
+    fun replaceFragment(fragment: Fragment){
+        supportFragmentManager.beginTransaction().apply {
+            /*setCustomAnimations(
+                R.anim.slide_in_left,
+                R.anim.slide_in_right,
+                R.anim.slide_out_left,
+                R.anim.slide_out_right
+            )*/
+            replace(R.id.container, fragment)
+            addToBackStack(null)
+            commit()
         }
     }
 
-    private fun ImagenAnterior(i:Int):Int{
-        var k = i
-        if(k==0){
-            k=detalles.size-1
-        }else {
-            k -= 1
-        }
-        return k
+    fun saveFavPreferences(detalles: Array<Detalles>?=null){
+        preferences.edit().putString(USR_FAV, moshi.adapter(Array<Detalles>::class.java).toJson(detalles)).apply()
     }
 
-    private fun ImagenSiguiente(i:Int):Int{
-        var k = i
-        if(k==detalles.size-1){
-            k=0
-        }else {
-            k += 1
-        }
-        return k
-    }
+    fun getFavPreferences() =
+        preferences.getString(USR_FAV, null)?.let{
+            return@let try {
+                moshi.adapter(Detalles.listaImagenes::class.java).fromJson(it)
+            }catch (e: Exception){
+                Detalles.listaImagenes
+            }
+        }?:Detalles.listaImagenes
+
 }
