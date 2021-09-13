@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".InformacionFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="30dp">
+        <ImageView
+            android:id="@+id/imgView"
+            android:src="@drawable/perritodelfuturo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/txvTitulo"/>
+        <TextView
+            android:id="@+id/txvTitulo"
+            android:text="titulo"
+            android:textFontWeight="700"
+            android:textSize="20pt"
+            android:textColor="@color/black"
+            android:layout_width="0dp"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgView"
+            app:layout_constraintBottom_toTopOf="@+id/txvDescription"/>
+        <TextView
+            android:id="@+id/txvDescription"
+            android:layout_width="0dp"
+            android:text="descrip"
+            android:textFontWeight="300"
+            android:textSize="14pt"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgView"
+            app:layout_constraintBottom_toTopOf="@id/imgFavorito"/>
+        <ImageView
+            android:id="@+id/imgFavorito"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_baseline_star_outline_24"
+            app:layout_constraintTop_toBottomOf="@id/txvDescription"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/imgSonido"/>
+
+        <ImageView
+            android:id="@+id/imgSonido"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_baseline_playlist_add_24"
+            app:layout_constraintTop_toBottomOf="@id/txvDescription"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imgFavorito"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>
