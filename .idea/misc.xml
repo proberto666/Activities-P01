@@ -14,7 +14,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.12006079027355623" />
         <entry key="app/src/main/res/layout/fragment_galeria.xml" value="0.1962524261138328" />
         <entry key="app/src/main/res/layout/fragment_imagen.xml" value="0.12006079027355623" />
-        <entry key="app/src/main/res/layout/fragment_informacion.xml" value="0.501308703997108" />
+        <entry key="app/src/main/res/layout/fragment_informacion.xml" value="0.125" />
       </map>
     </option>
   </component>

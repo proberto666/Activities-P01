@@ -1,5 +1,6 @@
 package com.example.galeria
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -18,14 +19,11 @@ class GaleriaFragment : Fragment() {
     private lateinit var btnInformacion: Button
     private lateinit var imgViewer: ImageView
     private lateinit var imgSound : ImageView
-    private lateinit var imgFav : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         detalles = requireArguments().getParcelableArray("lista") as Array<Detalles>
     }
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,8 +38,6 @@ class GaleriaFragment : Fragment() {
         btnInformacion= view.findViewById(R.id.btnInfo)
         imgViewer = view.findViewById(R.id.imgView)
         imgSound=view.findViewById(R.id.imgSonido)
-        imgFav=view.findViewById(R.id.imgFavorito)
-
 
         imgViewer.setImageResource(detalles[i].src!!.imagen)
 
@@ -65,8 +61,17 @@ class GaleriaFragment : Fragment() {
             )
         }
 
+        imgSound.setOnClickListener{
+            detalles.forEach {
+                if(it.favSound){
+                    MediaPlayer.create(activity,it.src!!.sound).start()
+                }
+            }
+        }
+
        return view
     }
+
 
 
     private fun ImagenAnterior(i:Int):Int{

@@ -17,7 +17,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_width="match_parent"
-            android:layout_height="425dp"
+            android:layout_height="400dp"
             android:src="@drawable/gatocam" />
 
         <Button
@@ -28,7 +28,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btnInfo"
             app:layout_constraintTop_toBottomOf="@id/imgView"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toTopOf="@id/imgSonido"/>
         <Button
             android:id="@+id/btnSiguiente"
             android:text="@string/btn_siguiente"
@@ -37,37 +37,27 @@
             app:layout_constraintStart_toEndOf="@id/btnInfo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imgView"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toTopOf="@id/imgSonido"/>
         <Button
             android:id="@+id/btnInfo"
             android:text="@string/btn_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/imgSonido"
             app:layout_constraintStart_toStartOf="@id/imgView"
             app:layout_constraintEnd_toEndOf="@id/imgView"
             app:layout_constraintTop_toBottomOf="@id/imgView"/>
-        <ImageView
-            android:id="@+id/imgFavorito"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/imgSonido"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btnInfo"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/ic_baseline_star_24"
-            android:visibility="invisible"/>
 
         <ImageView
             android:id="@+id/imgSonido"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/imgFavorito"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btnInfo"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/ic_baseline_play_arrow_24"
-            android:visibility="gone"/>
+            android:visibility="visible"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

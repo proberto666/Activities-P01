@@ -59,5 +59,4 @@ class MainActivity : AppCompatActivity() {
                 Detalles.listaImagenes
             }
         }?:Detalles.listaImagenes
-
 }
