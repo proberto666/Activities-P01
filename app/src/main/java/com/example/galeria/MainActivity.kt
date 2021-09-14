@@ -35,12 +35,12 @@ class MainActivity : AppCompatActivity() {
 
     fun replaceFragment(fragment: Fragment){
         supportFragmentManager.beginTransaction().apply {
-            /*setCustomAnimations(
-                R.anim.slide_in_left,
+            setCustomAnimations(
                 R.anim.slide_in_right,
                 R.anim.slide_out_left,
+                R.anim.slide_in_left,
                 R.anim.slide_out_right
-            )*/
+            )
             replace(R.id.container, fragment)
             addToBackStack(null)
             commit()
